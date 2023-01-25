@@ -1,0 +1,24 @@
+{
+  "name": "php-sucks/server-roadrunner",
+  "type": "project",
+  "require": {
+    "spiral/roadrunner": "^2.12",
+    "nyholm/psr7": "^1.5"
+  },
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Ivan Pepelko",
+      "email": "ivan.pepelko@gmail.com"
+    }
+  ],
+  "scripts": {
+    "start": "php main.php",
+    "docker:build": "docker build -t php-sucks-roadrunner:latest .",
+    "docker:push": "docker push php-sucks-roadrunner:latest",
+    "deploy": [
+      "@docker:build",
+      "@docker:push"
+    ]
+  }
+}

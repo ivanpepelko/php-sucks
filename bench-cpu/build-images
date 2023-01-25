@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+for v in 8.0 8.1 8.2; do
+    echo $v
+    docker build -f php-$v.Dockerfile -t php:$v-local .
+done

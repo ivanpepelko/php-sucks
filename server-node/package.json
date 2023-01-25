@@ -1,0 +1,19 @@
+{
+  "name": "php-sucks",
+  "version": "1.0.0",
+  "description": "Demo",
+  "main": "main.js",
+  "author": "Ivan Pepelko <ivan.pepelko@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node main.js",
+    "docker:build": "docker build -t 806512351418.dkr.ecr.eu-west-1.amazonaws.com/php-sucks/node:latest .",
+    "docker:push": "docker push 806512351418.dkr.ecr.eu-west-1.amazonaws.com/php-sucks/node:latest",
+    "deploy": "yarn docker:build && yarn docker:push"
+  },
+  "dependencies": {
+    "@redis/client": "^1.4.2"
+  }
+}

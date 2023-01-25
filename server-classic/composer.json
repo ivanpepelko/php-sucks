@@ -1,0 +1,22 @@
+{
+    "name": "php-sucks/server-classic",
+    "type": "project",
+    "require": {
+        "symfony/http-foundation": "^6.2"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Ivan Pepelko",
+            "email": "ivan.pepelko@gmail.com"
+        }
+    ],
+    "scripts": {
+        "docker:build": "docker build -t 806512351418.dkr.ecr.eu-west-1.amazonaws.com/php-sucks/classic:latest .",
+        "docker:push": "docker push 806512351418.dkr.ecr.eu-west-1.amazonaws.com/php-sucks/classic:latest",
+        "deploy": [
+            "@docker:build",
+            "@docker:push"
+        ]
+    }
+}

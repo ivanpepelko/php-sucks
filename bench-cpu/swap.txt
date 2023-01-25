@@ -1,0 +1,54 @@
+swap - with tmp
+   18     6    >   SUB                                              ~6      !3, 1
+          7        FETCH_DIM_R                                      ~5      !0, ~6
+          8        ASSIGN                                                   !4, ~5
+   19     9        SUB                                              ~6      !3, 1
+         10        FETCH_DIM_R                                      ~5      !0, !3
+         11        ASSIGN_DIM                                               !0, ~6
+         12        OP_DATA                                                  ~5
+   20    13        ASSIGN_DIM                                               !0, !3
+         14        OP_DATA                                                  !4
+
+===================================================================================
+
+swap - with tmp + function
+
+function name:  swap
+number of ops:  6
+compiled vars:  !0 = $x, !1 = $y, !2 = $tmp
+line      #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+    3     0  E >   RECV                                             !0
+          1        RECV                                             !1
+    6     2        QM_ASSIGN                                        !2      !0
+    7     3        ASSIGN                                                   !0, !1
+    8     4        ASSIGN                                                   !1, !2
+    9     5      > RETURN                                                   null
+
+
+   17     6    >   INIT_FCALL                                               'swap'
+          7        SUB                                              ~5      !3, 1
+          8        FETCH_DIM_W                                      $4      !0, ~5
+          9        SEND_REF                                                 $4
+         10        FETCH_DIM_W                                      $4      !0, !3
+         11        SEND_REF                                                 $4
+         12        DO_UCALL
+
+
+===================================================================================
+
+swap - array destructure
+
+   16     6    >   FETCH_DIM_R                                      ~5      !0, !3
+          7        INIT_ARRAY                                       ~4      ~5
+          8        SUB                                              ~6      !3, 1
+          9        FETCH_DIM_R                                      ~5      !0, ~6
+         10        ADD_ARRAY_ELEMENT                                ~4      ~5
+         11        FETCH_LIST_R                                     $5      ~4, 0
+         12        SUB                                              ~6      !3, 1
+         13        ASSIGN_DIM                                               !0, ~6
+         14        OP_DATA                                                  $5
+         15        FETCH_LIST_R                                     $5      ~4, 1
+         16        ASSIGN_DIM                                               !0, !3
+         17        OP_DATA                                                  $5
+         18        FREE                                                     ~4
