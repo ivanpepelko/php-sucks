@@ -1,6 +1,8 @@
 PHP Sucks!
 ==========
 
+Presentation: [https://docs.google.com/presentation/d/1d5gUcpIqpqu3vpL_ZY6ocOAaT-nJQEE6vUcIN29jCP8/edit?usp=sharing](https://docs.google.com/presentation/d/1d5gUcpIqpqu3vpL_ZY6ocOAaT-nJQEE6vUcIN29jCP8/edit?usp=sharing)
+
 ## Todo
 
 - finish up roadrunner example
